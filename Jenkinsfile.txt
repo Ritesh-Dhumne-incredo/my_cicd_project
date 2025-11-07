@@ -32,7 +32,8 @@ pipeline {
 
             steps {
 
-                bat 'pytest --maxfail=1 --disable-warnings -q'
+        // Ensure Python can see the src/ package
+        bat 'set PYTHONPATH=%D:\jenkins_home\workspace\jenkinsPipeline% && python -m pytest --maxfail=1 --disable-warnings -q'
 
             }
 
@@ -53,4 +54,5 @@ pipeline {
 }
 
  
+
 
