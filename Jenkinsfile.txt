@@ -10,7 +10,7 @@ pipeline {
 
                 // Make sure to replace <your-username> and repo name with the correct one
 
-                git branch: 'main', url: 'https://github.com/<your-username>/cicd.git'
+                git branch: 'main', url: 'https://github.com/Ritesh-Dhumne-incredo/my_cicd_project.git'
 
             }
 
@@ -53,3 +53,4 @@ pipeline {
 }
 
  
+
