@@ -1,0 +1,53 @@
+pipeline {
+
+    agent any
+ 
+    stages {
+ 
+        stage('Checkout Code') {
+
+            steps {
+
+                git branch: 'main', url: 'https://github.com/Ritesh-Dhumne-incredo/my_cicd_project.git'
+
+            }
+
+        }
+ 
+        stage('Install Dependencies') {
+
+            steps {
+
+                bat 'pip install -r requirements.txt'
+
+            }
+
+        }
+ 
+        stage('Run Tests') {
+
+            steps {
+
+                // Set PYTHONPATH dynamically to current workspace directory
+
+                bat 'set PYTHONPATH=%CD% && python -m pytest --maxfail=1 --disable-warnings -q'
+
+            }
+
+        }
+ 
+        stage('Build/Package (Optional)') {
+
+            steps {
+
+                bat 'echo Build successful. Ready for deployment!'
+
+            }
+
+        }
+ 
+    }
+
+}
+
+ 
