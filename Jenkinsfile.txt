@@ -3,12 +3,14 @@ pipeline {
     agent any
  
     stages {
-
+ 
         stage('Checkout Code') {
 
             steps {
 
-                git branch: 'main', url: 'https://github.com/Ritesh-Dhumne-incredo/cicd.git'
+                // Make sure to replace <your-username> and repo name with the correct one
+
+                git branch: 'main', url: 'https://github.com/<your-username>/cicd.git'
 
             }
 
@@ -18,7 +20,9 @@ pipeline {
 
             steps {
 
-                sh 'pip install -r requirements.txt'
+                // Windows command using 'bat'
+
+                bat 'pip install -r requirements.txt'
 
             }
 
@@ -28,7 +32,7 @@ pipeline {
 
             steps {
 
-                sh 'pytest --maxfail=1 --disable-warnings -q'
+                bat 'pytest --maxfail=1 --disable-warnings -q'
 
             }
 
@@ -38,15 +42,14 @@ pipeline {
 
             steps {
 
-                sh 'echo "Build successful. Ready for deployment!"'
+                bat 'echo Build successful. Ready for deployment!'
 
             }
 
         }
-
+ 
     }
 
 }
-
 
  
