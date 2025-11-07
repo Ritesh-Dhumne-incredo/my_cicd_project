@@ -8,7 +8,7 @@ pipeline {
 
             steps {
 
-                git branch: 'main', url: 'https://github.com/Ritesh-Dhumne-incredo/my_cicd_project.git'
+                git branch: 'main', url: 'https://github.com/Ritesh-Dhumne-incredo/cicd.git'
 
             }
 
@@ -47,5 +47,6 @@ pipeline {
     }
 
 }
+
 
  
